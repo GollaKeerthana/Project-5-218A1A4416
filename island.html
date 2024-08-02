@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islands</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Mystyles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+        .navbar-nav > li > a {
+            color: #000;
+            font-weight: bold;
+        }
+        .navbar-nav > li > a:hover {
+            text-decoration: underline;
+        }
+        .text-center {
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            margin-top: auto;
+        }
+        .island-image {
+            width: 300px;
+            height: 300px;
+            margin: 35px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .island-image:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <h1 class="text-center">ISLANDS</h1>
+        
+        <section>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="maldives.jpeg" alt="Maldives" class="island-image">
+                    <p>₹7000 <br><a href="./Loginsuccess.html"><button class="btn btn-primary">Book Now</button></a></p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="bali.webp" alt="Bali" class="island-image">
+                    <p>₹9000 <br><a href="./Loginsuccess.html"><button class="btn btn-primary">Book Now</button></a></p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="bora bora.jpeg" alt="Bora Bora" class="island-image">
+                    <p>₹8000 <br><a href="./Loginsuccess.html"><button class="btn btn-primary">Book Now</button></a></p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="capri.jpeg" alt="Capri" class="island-image">
+                    <p>₹9000 <br><a href="./Loginsuccess.html"><button class="btn btn-primary">Book Now</button></a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved</p>
+    </footer>
+
+    <script>
+        // Function to handle mouse events
+        function handleMouseEvent(event) {
+            const eventType = event.type;
+            const element = event.target;
+
+            if (eventType === 'mouseover') {
+                element.style.cursor = 'pointer'; // Change cursor to pointer on hover
+            } else if (eventType === 'mouseout') {
+                element.style.cursor = 'default'; // Reset cursor
+            } else if (eventType === 'click') {
+                alert(`You clicked on the ${element.alt}`); // Show alert with image alt text
+            }
+        }
+
+        // Add event listeners to images and buttons
+        document.querySelectorAll('.island-image, .btn-primary').forEach(element => {
+            element.addEventListener('mouseover', handleMouseEvent);
+            element.addEventListener('mouseout', handleMouseEvent);
+            element.addEventListener('click', handleMouseEvent);
+        });
+    </script>
+</body>
+</html>

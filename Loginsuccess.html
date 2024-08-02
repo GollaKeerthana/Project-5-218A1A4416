@@ -1,0 +1,181 @@
+<!--<html>
+    <head>
+        <title>Booking</title>
+        <link rel="stylesheet" href="Mystyles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .form{
+                display: flex;
+                justify-content: center;
+            }
+            input[type="text"]{
+                border-radius: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Travel</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                        <li><a href="./About.html" class="btn btn-default">About</a></li>
+                        <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                        <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                        <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <center>
+            <h2><br>Ticket Booking<br></h2>
+        </center>
+        <div class="form">
+            <form action="Booked.html">
+                User Name : <input type="text" name="uname"><br><br>
+                Password : <input type="password" name="pwd"><br><br>
+                Mobile Number : <input type="tel" pattern="[0-9]{10}" title="It's ten digit number"><br><br>
+                Date of Booking : <input type="date" ><br><br>
+                Type of Place : <br><br>
+                <select name="Place">
+                    <option value="hill">Hill Stations</option>
+                    <option value="island">Islands</option>
+                    <option value="desert">Deserts</option>
+                </select><br><br>
+                Trip Plan : <input type="text" name="no of days"><br><br>
+                No of Persons : <input type="number" name="tickets" min="1" max="10" step="1" value="1"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body><br><br><br><br><br><br><br>
+    <footer>
+        <p><center>&copy; Travel Pvt.Ltd.All rights are reserved</center></p>
+    </footer>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="Mystyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .form-container form {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            border-radius: 50px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="form-container">
+        <form action="Booked.html">
+            <h2 class="text-center">Ticket Booking</h2>
+            <div class="form-group">
+                <label for="uname">User Name:</label>
+                <input type="text" id="uname" name="uname" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" id="pwd" name="pwd" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" class="form-control" pattern="[0-9]{10}" title="It's a ten digit number" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date of Booking:</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="place">Type of Place:</label>
+                <select id="place" name="place" class="form-control" required>
+                    <option value="hill">Hill Stations</option>
+                    <option value="island">Islands</option>
+                    <option value="desert">Deserts</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="days">Trip Plan (Number of Days):</label>
+                <input type="number" id="days" name="days" class="form-control" min="1" max="30" step="1" value="1" required>
+            </div>
+            <div class="form-group">
+                <label for="persons">Number of Persons:</label>
+                <input type="number" id="persons" name="persons" class="form-control" min="1" max="10" step="1" value="1" required>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved</p>
+    </footer>
+</body>
+</html>

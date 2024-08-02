@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Mystyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .form-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10% 0;
+        }
+        h1 {
+            text-shadow: 2px 2px 4px #000;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            margin-top: auto;
+        }
+    </style>
+    <script>
+        function loginValidation() {
+            var name = document.myform.uname.value.trim();
+            var password = document.myform.pass.value.trim();
+            if (name === "") {
+                alert("Name cannot be empty.");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="form-center">
+        <form name="myform" action="update.html" onsubmit="return loginValidation()">
+            <h1>Login</h1>
+            <div class="form-group">
+                <label for="uname">User Name:</label>
+                <input type="text" id="uname" name="uname" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="pass" class="form-control" placeholder="Password" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Created</title>
+    <link rel="stylesheet" href="Mystyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+            transition: transform 0.3s, border 0.3s;
+        }
+        img:hover {
+            cursor: pointer;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1><b>Your account has been created successfully!<br>You can now log in to your account.</b></h1><br>
+        <img id="submissionImage" src="subm.gif" alt="Submission Success">
+    </div>
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the image element by its ID
+        var img = document.getElementById('submissionImage');
+
+        // Add a mouseover event listener
+        img.addEventListener('mouseover', function() {
+            img.style.transform = 'scale(1.1)';
+            img.style.border = '5px solid skyblue'; // Add a blue border on hover
+        });
+
+        // Add a mouseout event listener
+        img.addEventListener('mouseout', function() {
+            img.style.transform = 'scale(1)';
+            img.style.border = 'none'; // Remove the border when not hovering
+        });
+
+        // Add a click event listener
+        img.addEventListener('click', function() {
+            alert('You clicked the submission image!');
+        });
+    </script>
+</body>
+</html>

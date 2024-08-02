@@ -1,0 +1,350 @@
+<!--<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        nav {
+            text-align: right;
+            font-weight: bold;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline;
+            padding: 0%;
+        }
+        nav ul li a {
+            color: black;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .form-center {
+            display: flex;
+            justify-content: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        @media screen and (min-width:320px) {
+            body {
+                background-color: aqua;
+            }
+        }
+        @media screen and (min-width:620px) {
+            body {
+                background-color: violet;
+            }
+        }
+        @media screen and (min-width:821px) and (max-width:1000px) {
+            body {
+                background-color: blueviolet;
+            }
+        }
+        @media screen and (min-width:1201px) {
+            body {
+                background-color: pink;
+            }
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+        }
+        p {
+            text-align: left;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var fname = document.forms["registrationForm"]["fname"].value;
+            var lname = document.forms["registrationForm"]["lname"].value;
+            var dob = document.forms["registrationForm"]["bname"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var phone = document.forms["registrationForm"]["phone"].value;
+
+            if (fname == "" || lname == "" || dob == "" || email == "" || phone == "") {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            var genderChecked = document.querySelector('input[name="gender"]:checked');
+            if (!genderChecked) {
+                alert("Please select your gender.");
+                return false;
+            }
+            const checkboxes = document.getElementsByName('Language');
+      let checkedCount = 0;
+      for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          checkedCount++;
+        }
+      }
+      if (checkedCount === 0) {
+        alert("Please select at least one Language.");
+        return false;
+      }
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                if (!validateForm()) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="form-center">
+        <form name="registrationForm" action="./Submission.html" onsubmit="return validateForm()">
+            <center><font size="4"><b>Registration Form</b></font></center><br><br>
+            First Name : <input type="text" name="fname" autofocus><br><br>
+            Last Name : <input type="text" name="lname"><br><br>
+            Date of Birth : <input type="date" name="bname"><br><br>
+            Gender : <br><input type="radio" name="gender" value="M">Male<br>
+            <input type="radio" name="gender" value="F">Female<br><br>
+            Email : <input type="email" name="email"><br><br>
+            Phone Number : <input type="tel" name="phone" pattern="[0-9]{10}" title="It's a ten digit number"><br><br>
+            Languages Known : <br><br>
+            <input type="checkbox" name="Language" value="Eng">English<br><br>
+            <input type="checkbox" name="Language" value="Tel">Telugu<br><br>
+            <input type="checkbox" name="Language" value="Hin">Hindi<br><br>
+            Address : <br><br>
+            <textarea name="address" cols="25" rows="3">Enter Address</textarea><br><br>
+            <input type="submit">
+        </form>
+    </div>
+    <br><br><br><br>
+    <footer>
+        <p><center>&copy; Travel Pvt.Ltd. All rights are reserved</center></p>
+    </footer>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        nav {
+            text-align: right;
+            font-weight: bold;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            padding: 0 10px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .form-center {
+            display: flex;
+            justify-content: center;
+            padding: 5% 0;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+            .form-container input[type="text"],
+        .form-container input[type="tel"],
+        .form-container input[type="date"],
+        .form-container select,
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        form {
+            width: 100%;
+            padding: 20px;
+        }
+        @media screen and (min-width: 320px) {
+            body {
+                background-color: aqua;
+            }
+        }
+        @media screen and (min-width: 620px) {
+            body {
+                background-color: violet;
+            }
+        }
+        @media screen and (min-width: 821px) and (max-width: 1000px) {
+            body {
+                background-color: blueviolet;
+            }
+        }
+        @media screen and (min-width: 1201px) {
+            body {
+                background-color: pink;
+            }
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var fname = document.forms["registrationForm"]["fname"].value;
+            var lname = document.forms["registrationForm"]["lname"].value;
+            var dob = document.forms["registrationForm"]["bname"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var phone = document.forms["registrationForm"]["phone"].value;
+
+            if (fname == "" || lname == "" || dob == "" || email == "" || phone == "") {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            var genderChecked = document.querySelector('input[name="gender"]:checked');
+            if (!genderChecked) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            const checkboxes = document.getElementsByName('Language');
+            let checkedCount = 0;
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+            if (checkedCount === 0) {
+                alert("Please select at least one Language.");
+                return false;
+            }
+            
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                if (!validateForm()) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="form-center">
+        <div class="form-container">
+            <form name="registrationForm" action="./Submission.html" method="post">
+                <h2 class="text-center">Registration Form</h2><br>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" autofocus><br><br>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="bname">Date of Birth:</label>
+                <input type="date" id="bname" name="bname"><br><br>
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <input type="radio" id="male" name="gender" value="M">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="F">
+                    <label for="female">Female</label><br><br>
+                </fieldset>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="It's a ten digit number"><br><br>
+                <fieldset>
+                    <legend>Languages Known:</legend>
+                    <input type="checkbox" id="english" name="Language" value="Eng">
+                    <label for="english">English</label><br>
+                    <input type="checkbox" id="telugu" name="Language" value="Tel">
+                    <label for="telugu">Telugu</label><br>
+                    <input type="checkbox" id="hindi" name="Language" value="Hin">
+                    <label for="hindi">Hindi</label><br><br>
+                </fieldset>
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address" cols="25" rows="3">Enter Address</textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved</p>
+    </footer>
+</body>
+</html>

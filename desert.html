@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deserts</title>
+    <link rel="stylesheet" href="Mystyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar-nav > li > a {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .navbar-nav > li > a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .table {
+            margin: 20px 0;
+        }
+
+        .desert-image {
+            width: 300px;
+            height: 300px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .desert-image:hover {
+            opacity: 0.8; /* Slightly change opacity on hover for images */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .book-now {
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Travel</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                    <li><a href="./About.html" class="btn btn-default">About</a></li>
+                    <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                    <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                    <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1 class="text-center"><strong>DESERTS</strong></h1>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h3>Thar</h3>
+                        <img src="thar.jpeg" alt="Thar Desert" class="desert-image">
+                        <p>₹2000<br>
+                        <a href="./Loginsuccess.html" class="btn btn-primary book-now">Book Now</a></p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h3>Sahara</h3>
+                        <img src="sahara.jpeg" alt="Sahara Desert" class="desert-image">
+                        <p>₹3000<br>
+                        <a href="./Loginsuccess.html" class="btn btn-primary book-now">Book Now</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h3>Kalahari</h3>
+                        <img src="kalahari.jpg" alt="Kalahari Desert" class="desert-image">
+                        <p>₹4000<br>
+                        <a href="./Loginsuccess.html" class="btn btn-primary book-now">Book Now</a></p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h3>Syrian</h3>
+                        <img src="syrian.jpeg" alt="Syrian Desert" class="desert-image">
+                        <p>₹3000<br>
+                        <a href="./Loginsuccess.html" class="btn btn-primary book-now">Book Now</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved</p>
+    </footer>
+
+    <script>
+        // Function to handle mouse events
+        function handleMouseEvent(event) {
+            const eventType = event.type;
+            const element = event.target;
+
+            if (element.classList.contains('desert-image')) {
+                if (eventType === 'mouseover') {
+                    element.style.cursor = 'pointer'; // Change cursor to pointer on hover
+                } else if (eventType === 'mouseout') {
+                    element.style.cursor = 'default'; // Reset cursor
+                } else if (eventType === 'click') {
+                    alert(`You clicked on the image: ${element.alt}`); // Show alert with image alt text
+                }
+            } else if (element.classList.contains('book-now')) {
+                if (eventType === 'mouseover') {
+                    element.style.cursor = 'pointer'; // Change cursor to pointer on hover
+                } else if (eventType === 'mouseout') {
+                    element.style.cursor = 'default'; // Reset cursor
+                } else if (eventType === 'click') {
+                    alert('Booking button clicked!');
+                }
+            }
+        }
+
+        // Add event listeners to images and buttons
+        document.querySelectorAll('.desert-image, .book-now').forEach(element => {
+            element.addEventListener('mouseover', handleMouseEvent);
+            element.addEventListener('mouseout', handleMouseEvent);
+            element.addEventListener('click', handleMouseEvent);
+        });
+    </script>
+</body>
+</html>

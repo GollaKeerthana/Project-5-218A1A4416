@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip</title>
+    <link rel="stylesheet" href="Mystyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            background-color: #f5f5f5; /* Adjust as needed */
+            flex: 1;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        .navbar-nav > li > a {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .navbar-nav > li > a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .content img {
+            width: 300px; /* Ensure images have consistent size */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Travel</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                <li><a href="./Home.html" class="btn btn-default">Home</a></li>
+                <li><a href="./About.html" class="btn btn-default">About</a></li>
+                <li><a href="./ContactUs.html" class="btn btn-default">Contact Us</a></li>
+                <li><a href="./SignIn.html" class="btn btn-default">Sign In</a></li>
+                <li><a href="./Login.html" class="btn btn-default">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1><strong>You have planned your trip with us<br>Enjoy the vacation</strong></h1>
+        <img src="trip.gif" alt="Trip" id="tripImage">
+    </div>
+
+    <footer>
+        <p>&copy; Travel Pvt. Ltd. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to add mouse event listeners to images
+        document.addEventListener('DOMContentLoaded', function() {
+            var tripImage = document.getElementById('tripImage');
+
+            tripImage.addEventListener('mouseover', function() {
+                tripImage.style.border = '5px solid skyblue'; // Add a border on hover
+            });
+
+            tripImage.addEventListener('mouseout', function() {
+                tripImage.style.border = 'none'; // Remove the border when mouse is out
+            });
+
+            tripImage.addEventListener('click', function() {
+                alert('You clicked on the trip image!'); // Show an alert on click
+            });
+        });
+    </script>
+</body>
+</html>
